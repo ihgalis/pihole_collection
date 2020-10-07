@@ -429,7 +429,7 @@ bkpublication.in
 bloemistvlijmen.nl
 blog.aiyunwei.top
 blog.lanbaba666.cn
-blog.xuezha.cn:443
+blog.xuezha.cn
 boke.xiaoxiekeji.top
 britanniacricketleague.com
 bruset.no
@@ -2853,7 +2853,7 @@ iwxdy.cn
 kudutaipei.com
 lvl.com.br
 onlifeapp.com
-onlifeapp.com:443
+onlifeapp.com
 www1.bheringadvogados.com.br
 yun.xuezha.cn
 zeitraisen.com
@@ -3010,7 +3010,7 @@ revol.vn
 royalbevande.com
 afamarwaa-001-site1.gtempurl.com
 alescenter.azura.my.id
-anathanjewellers.com:443
+anathanjewellers.com
 antacaixola.com.br
 antremalem.com
 cit-sa.com
@@ -3144,7 +3144,7 @@ research.kku.ac.th
 rubikservice.com
 afamo.ir
 anathanjewellers.com
-anathanjewellers.com:443
+anathanjewellers.com
 bsec.org
 lotgratisgallina.g10a.xyz
 artenderapothecary.com
@@ -3437,7 +3437,7 @@ ruralagricola.com.br
 bobetplay.online
 arasconstruction.in
 ocksock.it
-opindiancrafts.com:443
+opindiancrafts.com
 ieuthi.webdungsan.com
 irihandcrafts.com
 istaqui.com
