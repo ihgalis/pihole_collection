@@ -14,8 +14,8 @@ A simple tool to check if domains can be resolved by a specified DNS server.
    Clone the repository to your local system:
    
    ```
-   git clone https://github.com/YourGithubUsername/DNSDomainChecker.git
-   cd DNSDomainChecker
+   git clone https://github.com/ihgalis/pihole_collection.git
+   cd pihole_collection/dns_checker
    ```
 
 2. **Create Conda Environment**
