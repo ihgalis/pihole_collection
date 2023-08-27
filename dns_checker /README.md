@@ -42,11 +42,17 @@ A simple tool to check if domains can be resolved by a specified DNS server.
 
 4. **Run the Script**
 
-   Now, you can run the script:
+   Now, you can run the script. It will choose a random DNS Server:
 
    ```
-   python main.py --input input.txt --alive alive.txt --dead dead.txt --dns 8.8.8.8
+   python main.py --input input.txt --alive alive.txt --dead dead.txt
    ```
+
+   If you like to use just one DNS Server add this argument:
+
+   ```
+    --dns <IP>
+   ````
 
 
 ## Support
