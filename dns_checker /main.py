@@ -2,6 +2,9 @@ import argparse
 import socket
 import dns.resolver
 import datetime
+import time
+
+from random import randint
 
 class Colors:
     GREEN = '\033[92m'
@@ -25,6 +28,9 @@ def check_domains(domain_list, dns_server=None):
 
     for domain in domain_list:
         print_with_timestamp(f"Reading domain: {domain}")
+        temp_waittime = randint(2, 7)
+        print_with_timestamp(f"Waiting {temp_waittime}")
+        time.sleep(temp_waittime)
         try:
             resolver.resolve(domain, 'A')  # Try to retrieve the A record of the domain
             alive_domains.append(domain)
