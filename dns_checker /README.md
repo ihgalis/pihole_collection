@@ -42,18 +42,36 @@ A simple tool to check if domains can be resolved by a specified DNS server.
 
 4. **Run the Script**
 
-   Now, you can run the script. It will choose a random DNS Server:
+4.1. ***Default settings***
+
+   Now, you can run the script. In the following example the arguments do this:
+
+   * `--input` the list domains to be checked
+   * `--alive` the output list with all alive hosts
+   * `--dead` the list with all dead - not resolvable - hosts
+   * `--dns` usage of one specific DNS server to resolve all hosts
 
    ```
+   python main.py --input input.txt --alive alive.txt --dead dead.txt --dns 8.8.8.8
+   ```
+
+4.2. ***Advanced usage***
+
+   You can do even more which might help you get better results, like choose random DNS resolving hosts for each DNS request, or add some random waiting time in order to not get blocked:
+
+   ```
+   # Waits 1 second between every DNS request, chooses random DNS Servers
    python main.py --input input.txt --alive alive.txt --dead dead.txt
+
+   # Waits 2-4 seconds between DNS requests (randomly choosen)
+   python main.py --input input.txt --alive alive.txt --dead dead.txt -w 1
+
+   # Waits 4-6 seconds between DNS requests (randomly choosen)
+   python main.py --input input.txt --alive alive.txt --dead dead.txt -w 2
+
+   # Waits 6-10 seconds between DNS requests (randomly choosen)
+   python main.py --input input.txt --alive alive.txt --dead dead.txt -w 3
    ```
-
-   If you like to use just one DNS Server add this argument:
-
-   ```
-    --dns <IP>
-   ````
-
 
 ## Support
 
