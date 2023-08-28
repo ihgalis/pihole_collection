@@ -47,15 +47,25 @@ def check_domains(domain_list, dns_server=None):
 
     for domain in domain_list:
         print_with_timestamp(f"Reading domain: {domain}")
-        temp_waittime = randint(2, 7)
-        print_with_timestamp(f"Waiting {temp_waittime}")
-        time.sleep(temp_waittime)
+        
+        if ".." in domain:
+            print_with_timestamp(f"Invalid domain: {domain}. Skipping...", Colors.RED)
+            continue
+        
+        if args.wait_level:
+            if args.wait_level == 1:
+                temp_waittime = randint(2, 4)
+            elif args.wait_level == 2:
+                temp_waittime = randint(4, 6)
+            elif args.wait_level == 3:
+                temp_waittime = randint(6, 10)
+            print_with_timestamp(f"Waiting {temp_waittime} seconds")
+            time.sleep(temp_waittime)
         
         # Choose a random DNS server from the list if none is provided
         if not dns_server:
             dns_server = choice(public_dns_servers)
-        
-        print_with_timestamp(f"Using DNS server: {dns_server}")
+            print_with_timestamp(f"Using DNS server: {dns_server}")
             
         resolver.nameservers = [dns_server]
         try:
@@ -67,6 +77,8 @@ def check_domains(domain_list, dns_server=None):
         except (dns.resolver.NXDOMAIN, dns.resolver.NoAnswer, dns.resolver.NoNameservers):
             dead_domains.append(domain)
             print_with_timestamp(f"Domain {domain} is dead.", Colors.RED)
+        except dns.name.EmptyLabel:
+            print_with_timestamp(f"Invalid domain: {domain}. Contains empty label.", Colors.RED)
 
     return alive_domains, dead_domains
 
@@ -76,6 +88,7 @@ def main():
     parser.add_argument("--dns", default=None, help="IP address of the DNS server to use for checks. If not provided, a random public DNS server will be chosen.")
     parser.add_argument("--alive", required=True, help="Path to the output file for alive domains.")
     parser.add_argument("--dead", required=True, help="Path to the output file for dead domains.")
+    parser.add_argument("-w", "--wait-level", type=int, choices=[1, 2, 3], default=None, help="Level of randomness for waiting time between DNS queries.")
     args = parser.parse_args()
 
     print_with_timestamp("Reading domains from input file ...")
