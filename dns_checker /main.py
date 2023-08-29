@@ -18,7 +18,7 @@ def print_with_timestamp(message, color=None):
     else:
         print(f"[{timestamp}] {message}")
 
-def check_domains(domain_list, dns_server=None):
+def check_domains(args, domain_list, dns_server=None):
     alive_domains = []
     dead_domains = []
 
@@ -96,7 +96,7 @@ def main():
         domains = [line.strip() for line in f.readlines()]
 
     print_with_timestamp(f"Checking {len(domains)} domains ...")
-    alive, dead = check_domains(domains, args.dns)
+    alive, dead = check_domains(args, domains, args.dns)
 
     print_with_timestamp(f"Saving alive domains to {args.alive} ...")
     with open(args.alive, 'w') as f:
