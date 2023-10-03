@@ -80,17 +80,7 @@ def check_domains(args, domain_list, dns_server=None):
         '8.8.4.4',          # Google DNS
         '1.1.1.1',          # Cloudflare DNS
         '1.0.0.1',          # Cloudflare DNS
-        '208.67.222.222',   # OpenDNS
-        '208.67.220.220',   # OpenDNS
-        '9.9.9.9',          # Quad9
-        '149.112.112.112',  # Quad9
-        '64.6.64.6',        # Verisign
-        '76.76.2.0',        # Control D
-        '76.76.10.0',       # Control D
-        '94.140.14.14',     # AdGuard DNS
-        '94.140.15.15',     # AdGuard DNS
-        '8.26.56.26',       # Comodo Secure DNS
-        '8.20.247.20'       # Comodo Secure DNS
+        '64.6.64.6'         # Verisign
     ]
 
     resolver = dns.resolver.Resolver()
